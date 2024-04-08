@@ -5,7 +5,7 @@ import {APIProvider, Map} from "@vis.gl/react-google-maps";
 import {calculateRotations} from "../utils/directionUtil.ts";
 import VehicleMarker from "./VehicleMarker.tsx";
 import VehiclePath from "./VehiclePath.tsx";
-import {useSelector} from "react-redux";
+import { useSelector} from "react-redux";
 import {RootState} from "../redux/store.ts";
 
 interface Props {
@@ -33,6 +33,7 @@ const TripHistoryMap: React.FC<Props> = ({vehicles, tripHistory}) => {
         });
     }
 
+
     return (
 
         <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
@@ -40,6 +41,7 @@ const TripHistoryMap: React.FC<Props> = ({vehicles, tripHistory}) => {
                 style={{width: '100vw'}}
                 defaultCenter={{lat: center.lat, lng: center.lng}}
                 defaultZoom={zoom}
+
                 mapId={"b1b1b1b1b1b1b1b1"}
             >
                 {showTripHistory && renderTripHistory()}
